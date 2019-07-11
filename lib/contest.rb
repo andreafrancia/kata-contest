@@ -1,3 +1,18 @@
+def primo_articolo_di_yahoo(session)
+  session.visit "https://it.yahoo.com/"
+  begin
+    session.click_on "OK"
+  rescue Capybara::ElementNotFound
+  end
+  sleep(1)
+  titolo = session.find("#applet_p_50000173 h2").text
+  session.find("#applet_p_50000173").click_on("Leggi l'articolo")
+  sleep(1)
+  contenuto = session.find_all(".body-wrapper").first.text
+  {titolo:titolo,
+   contenuto:contenuto}
+end
+
 def registrati(session, username)
   session.visit "http://www.ciediweb.it/automation_contest/index.php/component/users/?view=registration&Itemid=101"
   session.fill_in 'jform[name]', with: username

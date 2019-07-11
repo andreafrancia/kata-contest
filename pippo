@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/contest'
+
+session = chrome_session
+
+
+username = ARGV.shift || "ciccio1@example.com"
+
+registrati(session, username)
+fai_login(session, username)
+
+articolo = primo_articolo_di_yahoo(session)
+
+sottoponi_un_articolo(session,
+                      articolo[:titolo],
+                      articolo[:contenuto])
+
+session.save_and_open_page
