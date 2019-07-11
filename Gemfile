@@ -11,3 +11,4 @@ gem "selenium-webdriver"
 gem "pry"
 gem 'capybara-mechanize'
 gem 'sinatra'
+gem 'launchy'

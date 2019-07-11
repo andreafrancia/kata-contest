@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/contest'
+
+session = chrome_session
+
+
+username = ARGV.first || "ciccio1@example.com"
+registrati(session, username)
+fai_login(session, username)
+titolo = "titolo"
+contenuto = "contenuto"
+sottoponi_un_articolo(session, titolo, contenuto)
+session.save_and_open_page

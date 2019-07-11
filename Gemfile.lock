@@ -23,6 +23,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mechanize (2.7.6)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -96,6 +98,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   capybara-mechanize
+  launchy
   pry
   rspec
   selenium-webdriver
